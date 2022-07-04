@@ -1,0 +1,334 @@
+﻿{
+  "paragraphs": [
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "tableHide": true,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "INITIALIZING HEATWAVE AUTO PARALLEL LOAD": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1656599877733_1252333741",
+      "id": "paragraph_1656599877733_1252333741",
+      "dateCreated": "2022-06-30T14:37:57+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:59914",
+      "text": "-- Load the airportdb tables into the HeatWave cluster (If it's not done yet)\nCALL sys.heatwave_load(JSON_ARRAY('airportdb'), NULL) \n",
+      "dateUpdated": "2022-06-30T14:40:33+0000",
+      "dateFinished": "2022-06-30T14:40:33+0000",
+      "dateStarted": "2022-06-30T14:40:33+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "INITIALIZING HEATWAVE AUTO PARALLEL LOAD\nVersion: 1.27\nLoad Mode: normal\nLoad Policy: disable_unsupported_columns\nOutput Mode: normal\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "price": "string",
+                      "count(*)": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1656599950620_1397422554",
+      "id": "paragraph_1656599950620_1397422554",
+      "dateCreated": "2022-06-30T14:39:10+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:59991",
+      "text": "-- Number of Tickets > $500.00, Grouped By Price\nSELECT booking.price, count(*) \nFROM airportdb.booking \nWHERE booking.price > 500 \nGROUP BY booking.price \nORDER BY booking.price \nLIMIT 10;\n",
+      "dateUpdated": "2022-06-30T14:40:33+0000",
+      "dateFinished": "2022-06-30T14:40:33+0000",
+      "dateStarted": "2022-06-30T14:40:33+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "price\tcount(*)\n500.01\t860\n500.02\t1207\n500.03\t1135\n500.04\t1010\n500.05\t1016\n500.06\t1039\n500.07\t1002\n500.08\t1095\n500.09\t1117\n500.10\t1106\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "airlinename": "string",
+                      "avg_age": "string",
+                      "nb_people": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1656599970089_1687637106",
+      "id": "paragraph_1656599970089_1687637106",
+      "dateCreated": "2022-06-30T14:39:30+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:60407",
+      "text": "-- Average Age of Passengers By Country, Per Airline\nSELECT airline.airlinename, AVG(datediff(departure,birthdate)/365.25) as avg_age, count(*) as nb_people\nFROM airportdb.booking, airportdb.flight, airportdb.airline, airportdb.passengerdetails\nWHERE booking.flight_id=flight.flight_id AND\n    airline.airline_id=flight.airline_id AND\n    booking.passenger_id=passengerdetails.passenger_id AND\n    country IN (\"SWITZERLAND\", \"FRANCE\", \"ITALY\")\nGROUP BY airline.airlinename\nORDER BY airline.airlinename, avg_age\nLIMIT 10;",
+      "dateUpdated": "2022-06-30T14:40:33+0000",
+      "dateFinished": "2022-06-30T14:40:34+0000",
+      "dateStarted": "2022-06-30T14:40:33+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "airlinename\tavg_age\tnb_people\nAfghanistan Airlines\t45.92607116\t20570\nAlbania Airlines\t46.02480595\t21804\nAmerican Samoa Airli\t46.10093492\t15249\nAngola Airlines\t45.97209191\t18539\nArgentina Airlines\t46.03110048\t21298\nAustralia Airlines\t46.07920841\t19986\nAzerbaijan Airlines\t46.01654847\t16011\nBahamas Airlines\t46.22537506\t22564\nBelarus Airlines\t46.10813567\t18226\nBhutan Airlines\t46.13247687\t22873\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "airlinename": "string",
+                      "price_tickets": "string",
+                      "nb_tickets": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1656599991327_978615312",
+      "id": "paragraph_1656599991327_978615312",
+      "dateCreated": "2022-06-30T14:39:51+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:61011",
+      "text": "-- Most Tickets Sales by Airline for Departures from US Airports\nSELECT airline.airlinename, SUM(booking.price) as price_tickets, count(*) as nb_tickets\nFROM airportdb.booking, airportdb.flight, airportdb.airline, airportdb.airport_geo\nWHERE booking.flight_id=flight.flight_id AND\n    airline.airline_id=flight.airline_id AND\n    flight.from=airport_geo.airport_id AND\n    airport_geo.country = \"UNITED STATES\"\nGROUP BY airline.airlinename\nORDER BY nb_tickets desc, airline.airlinename\nLIMIT 10;",
+      "dateUpdated": "2022-06-30T14:40:34+0000",
+      "dateFinished": "2022-06-30T14:40:34+0000",
+      "dateStarted": "2022-06-30T14:40:34+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "airlinename\tprice_tickets\tnb_tickets\nFalkland Is Airlines\t54329614.83\t216237\nMicronesia Airlines\t53875825.72\t214275\nBrazil Airlines\t50039222.97\t199451\nCyprus Airlines\t47466718.63\t189493\nYugoslavia Airlines\t46905122.48\t186865\nItaly Airlines\t45731672.06\t182152\nPeru Airlines\t45742817.89\t182111\nLuxembourg Airlines\t44537553.63\t177952\nChad Airlines\t43162776.69\t172159\nAustralia Airlines\t41201251.28\t164501\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1656600000520_994074497",
+      "id": "paragraph_1656600000520_994074497",
+      "dateCreated": "2022-06-30T14:40:00+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:61708",
+      "dateUpdated": "2022-06-30T14:40:34+0000"
+    }
+  ],
+  "name": "Airportdb Analytics Queries",
+  "id": "2H6YEPZKA",
+  "defaultInterpreterGroup": "MySQL_HeatWave",
+  "version": "0.10.1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/Airportdb Analytics Queries"
+}
